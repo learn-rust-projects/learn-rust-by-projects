@@ -31,6 +31,7 @@ ok "✓ 哈希计算完成"
 # ===== 使用 own-git 读取 blob =====
 print_step "验证文件内容读取"
 OUTPUT=$("$PROGRAM" cat-file -p "$EXPECTED_HASH")
+info "读取的内容: $OUTPUT"
 if [[ "$OUTPUT" == "$RAND_CONTENT" ]]; then
     ok "✓ Blob 内容与预期一致"
 else

@@ -37,10 +37,8 @@ uninstall:
 # 运行测试
 .PHONY: test
 test: chmod build
-	# 安装项目
-	make install
-	# 运行测试脚本
-	./run_tests.sh
+	# 从target直接运行测试，获取TARGET_PATH的绝对路径并传递给run_tests.sh
+	./run_tests.sh "$$(realpath $(TARGET_PATH))"
 
 # 清理构建文件
 .PHONY: clean

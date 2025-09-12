@@ -128,7 +128,15 @@ main() {
     # 打印开始信息
     print_start_info "Git 实现测试套件"
         
-    PROGRAM="own-git"
+    # 接受Makefile传递的可执行文件绝对路径参数
+    if [ $# -gt 0 ]; then
+        PROGRAM="$1"
+        info "使用传入的可执行文件路径: $PROGRAM"
+    else
+        PROGRAM="own-git"
+        info "使用默认可执行文件名: $PROGRAM"
+    fi
+    
     TEST_DIR="test_dir"
     
     # 准备测试环境
