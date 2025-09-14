@@ -36,7 +36,7 @@ uninstall:
 
 # 运行测试
 .PHONY: test
-test: chmod build
+test: clean chmod build
 	# 从target直接运行测试，获取TARGET_PATH的绝对路径并传递给run_tests.sh
 	./run_tests.sh "$$(realpath $(TARGET_PATH))"
 
